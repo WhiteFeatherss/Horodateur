@@ -29,7 +29,7 @@ public class AdminMenu_Frame extends javax.swing.JFrame implements ActionListene
     {
         this.Cancel_Button.addActionListener(this);
 
-        this.OverrideEntry_Button.addActionListener(this);
+        this.EmployeeList_Button.addActionListener(this);
         
         this.NewEmployee_Button.addActionListener(this);
     }
@@ -62,35 +62,28 @@ public class AdminMenu_Frame extends javax.swing.JFrame implements ActionListene
     {
         AddEmployee_Frame addemployee_frame = new AddEmployee_Frame();
         addemployee_frame.setVisible(true);
-    }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    }  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents()
     {
 
         Cancel_Button = new javax.swing.JButton();
-        OverrideEntry_Button = new javax.swing.JButton();
+        EmployeeList_Button = new javax.swing.JButton();
         NewEmployee_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Cancel_Button.setText("Cancel");
 
-        OverrideEntry_Button.setText("Override Entry");
+        EmployeeList_Button.setText("Employee List");
+        EmployeeList_Button.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                EmployeeList_ButtonActionPerformed(evt);
+            }
+        });
 
         NewEmployee_Button.setText("New Employee");
 
@@ -102,7 +95,7 @@ public class AdminMenu_Frame extends javax.swing.JFrame implements ActionListene
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Cancel_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(OverrideEntry_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+                    .addComponent(EmployeeList_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
                     .addComponent(NewEmployee_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -112,7 +105,7 @@ public class AdminMenu_Frame extends javax.swing.JFrame implements ActionListene
                 .addContainerGap()
                 .addComponent(NewEmployee_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(OverrideEntry_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(EmployeeList_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Cancel_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -120,6 +113,12 @@ public class AdminMenu_Frame extends javax.swing.JFrame implements ActionListene
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void EmployeeList_ButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_EmployeeList_ButtonActionPerformed
+    {//GEN-HEADEREND:event_EmployeeList_ButtonActionPerformed
+       EmployeeList_Frame ELF = new EmployeeList_Frame();
+       ELF.setVisible(true);
+    }//GEN-LAST:event_EmployeeList_ButtonActionPerformed
 
     public static void main(String args[])
     {
@@ -165,8 +164,8 @@ public class AdminMenu_Frame extends javax.swing.JFrame implements ActionListene
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cancel_Button;
+    private javax.swing.JButton EmployeeList_Button;
     private javax.swing.JButton NewEmployee_Button;
-    private javax.swing.JButton OverrideEntry_Button;
     // End of variables declaration//GEN-END:variables
 
 

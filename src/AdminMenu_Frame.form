@@ -27,7 +27,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="Cancel_Button" alignment="0" max="32767" attributes="0"/>
-                  <Component id="OverrideEntry_Button" alignment="0" pref="256" max="32767" attributes="0"/>
+                  <Component id="EmployeeList_Button" alignment="0" pref="256" max="32767" attributes="0"/>
                   <Component id="NewEmployee_Button" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -40,7 +40,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="NewEmployee_Button" min="-2" pref="103" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="OverrideEntry_Button" min="-2" pref="59" max="-2" attributes="0"/>
+              <Component id="EmployeeList_Button" min="-2" pref="59" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="Cancel_Button" min="-2" pref="59" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
@@ -54,10 +54,13 @@
         <Property name="text" type="java.lang.String" value="Cancel"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="OverrideEntry_Button">
+    <Component class="javax.swing.JButton" name="EmployeeList_Button">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Override Entry"/>
+        <Property name="text" type="java.lang.String" value="Employee List"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmployeeList_ButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="NewEmployee_Button">
       <Properties>

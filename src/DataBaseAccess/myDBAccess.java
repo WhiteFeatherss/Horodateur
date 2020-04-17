@@ -20,6 +20,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -567,7 +569,7 @@ public class myDBAccess
     
     
     
-    public static String ReturnEmail(Integer EmployeeID)
+    public static String ReturnEmail(Integer EmployeeID) //Return the email of the Punching Employee.//
     {
         String SQL_SELECT = "SELECT EMPLOYEE_EMAIL FROM EMPLOYEES WHERE EMPLOYEE_ID =" + EmployeeID+"";
          
@@ -598,6 +600,45 @@ public class myDBAccess
             
             System.out.println("No Match");
             return null;
+    }
+    
+    
+    
+    public static void FillTable(JTable jtable, String Query)
+    {
+        try
+        {
+            OpenDB(DB_URL);
+            statement = connection.createStatement();
+            
+            ResultSet RS = statement.executeQuery(Query);
+            
+            while(jtable.getRowCount() > 0)
+            {
+                ((DefaultTableModel) jtable.getModel()).removeRow(0);
+            }
+            
+            int columns = RS.getMetaData().getColumnCount();
+            
+            System.out.println(columns);
+            
+            while(RS.next())
+            {
+                Object[] row = new Object[columns];
+                for(int i = 1; i < columns + 1; i++)
+                {
+                    row[i - 1] = RS.getObject(i);
+                }
+                ((DefaultTableModel) jtable.getModel()).insertRow(RS.getRow()-1, row);
+            }
+            
+            RS.close();
+            CloseDB();
+        }
+        catch(SQLException e)
+        {
+            printSQLException(e);
+        }
     }
     
 }
